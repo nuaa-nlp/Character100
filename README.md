@@ -1,11 +1,12 @@
-<div align= "center">
-    Character100 : A Benchmark for Characteristic AI Agents
+<div align="center">
+    <h1>Character100 : A Benchmark for Characteristic AI Agents</h1>
+    <p>
+      <a href="">Project Page</a> - 
+      <a href="">Paper</a>
+    </p>
 </div>
 
-<div align="center">
-  <a href="">Project Page</a> - 
-  <a href="">Paper</a>
-</div>
+
 
 **Character100** is a comprehensive benchmark designed to evaluate and compare the performance of characteristic AI agents. This benchmark includes a dataset tailored for the task, along with automatic evaluation metrics to measure and compare the capabilities of AI agents.
 

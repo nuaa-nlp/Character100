@@ -1,0 +1,147 @@
+Well, yeah. I think in a lot of ways, over the last few years, we have changed, significantly, how we've run the company. 
+We are, you know, dealing with a lot of major social issues, right, everything from policing harmful content, to protecting the integrity of elections, to making sure that data privacy controls are strong. 
+And the big journey that we've been on, over the last few years, is really getting much more proactive about seeking out where there might be issues and making sure we're investing appropriately to handle them. 
+You know, we now are doing way more on each of those fronts, in order to identify issues that come up and get ahead. 
+Well, I just saw that. So we're still looking into this. And you know, in general, we work with developers to make sure that they're respecting people's information and using it in only ways that they want. 
+But one of the reasons why I started -- why I wrote this op-ed, over the weekend, around areas where I think regulation would be helpful. 
+Where it would be useful to spell out clearly what the responsibilities that we want companies and people and governments to have are, I think, as we work through a lot of these issues, there are a lot of decisions that I just think people don't want a single private company to be making, right? 
+So for example... 
+Well, I've spent most of the last few years trying to address these major social issues that we find ourselves at the center of, so everything from policing harmful content, to preventing election interference, to making sure that we have strong data controls in place. 
+And I'm proud of the progress that we've made. There's a lot more to do. But we've made a lot of progress over the last couple of years. 
+And one of the things that I now have more of an appreciation about is that, in each of these areas there is a question of, what decisions should be left to a private company to make, especially around things like speech and expression for so many people around the world? 
+And where should we have either industry or more government regulation? And I can give you a few examples of where I think this is really important. 
+You know, after 2016, when we saw what Russia tried to do, in interfering in the election -- we've implemented a lot of different measures to verify any advertiser who's running a political ad to create an archive of all the political ads, so anyone can see what advertisers are running, who they're targeting, how much they're paying -- any other ads that they say. 
+But one of the things that's unclear is, actually, what is the definition of a political ad, right? 
+And that's a really fundamental question for this. 
+Well, yeah. That's exactly right. All of the laws around political advertising today primarily focus on a candidate and an election, right, so, "Vote for this candidate in this election." But that's not, primarily, what we saw Russia trying to do and other folks who were trying to interfere in elections. 
+And what we saw them doing was talking about divisive political issues. They'd run, simultaneously, different campaigns on social media trying to argue for immigration or against immigration. 
+And the goal wasn't, actually, to advance the issue forward. It was just to rile people up and be divisive. 
+But the current laws around what is political advertising don't consider discussion issues to be political. 
+So that's just one of the examples of where you know, it's not clear to me, after working on this for a few years now, that we want a private company to be making that kind of a fundamental decision about, you know, what is political speech? 
+And how should that be regulated? 
+That seems like something that there should be a more democratic process over. 
+Well, I think, broadly, we would say that setting the rules around political advertising is not a company's job, right? 
+I mean, there's been plenty of the rules in the past. It's just that, at this point they're not updated to the modern threats that we face or the modern kinds of nation state trying to interfere in each other's elections. 
+We need new rules, right? It's not, you can't say that an election is just some period before people go to vote. 
+I mean, the kind of information operations that these folks are trying to do now are ongoing, permanently. 
+So I just think that we need new rules on this. Now, at Facebook, we're doing the best that we can on each of these issues. 
+But I think, ideally, you would have standards that you would want all of the major companies to be abiding by. 
+Yeah. I don't think that that's what this is, though, right? I think it's you can say that kind of any regulation around what someone says online is protected. 
+But I think that that's clearly not right today. I mean, we already do have regulations around what you can do, in terms of political advertising. 
+And even without getting into saying, you know, "Okay, here's the type of content. And here's what we're going to define as, you know, hate speech," for example -- I still think it would be a positive step to demand that companies issue transparency reports around, well, here's the amount of content on your service or that is every kind of harmful category. 
+Here's the amount of hate speech. Here's the amount of misinformation. Here's the amount of bullying of children. 
+Because by making that transparent, that puts more pressure on companies in order to be able to manage that. 
+And people, publicly, can see which companies are actually doing a good job and improving and which ones need to do more. 
+I'm actually -- we release our transparency report on how we're proactively finding all of these harmful kinds of content. 
+Today, it's every six months. But I've committed that we're going to get to every quarter. Because I actually think that it's as important -- that kind of a transparency report around content, as the quarterly financial statements that we report. 
+I mean, this is, like, really critical stuff for society. So I don't think that anyone would say that having companies have to be transparent about the amounts of harmful content is any kind of First Amendment issue. 
+Well, it's different things in each category. For policing harmful content, I think it should start with transparency of every major internet service about-- take any-- every single category of harmful content. 
+And I think you should have to, basically, report what the prevalence of that? So what percent of the content on your service is, you know, inciting violence, for example, or hate speech? 
+And then you should have to report how much of that you identified proactively and built systems to go get and be able to manage -- versus how much of it did someone in your community have to tell you about, and you had to deal with it reactively? 
+So that's the first step, is transparency. 
+Then, I think, so that gets, that gets to enforcement. I think companies should be responsible for having proactive enforcement of issues on their platforms, right? 
+If someone is trying to spread terrorist propaganda, for example, that's an area that we've built systems that are quite advanced for now. 
+Now, 99% of the ISIS and Al Qaeda content that we take down, our AI systems identify and remove before any person sees it, right? 
+So that's a good example of being proactive and, I think, what we should hold all companies to account to be able to do. 
+There's a separate question about, how do you make the decision about what content should be allowed in the first place? 
+And there, you know, every country has a different tradition. In the U.S., we have the First Amendment and strong protections around free speech. 
+So maybe the government won't get involved directly in deciding that. But one of the things that we're trying to do at Facebook right now is set up an independent oversight board for content. 
+So you can kind of think about this almost like a judicial structure. It's going to be about 40 people, who are experts on free speech and safety. 
+And the way it's going to work is that, if you're in the community, and we make a decision on your content, if we take something down that you think is valid expression, you're going to be able to appeal that to this oversight board. 
+And they're going to have the binding authority to make a decision. So at that point, it doesn't matter what I think or what our teams think. 
+If they think that's valid expression, and that needs to be up, or if they think it's going to be harmful to people and it needs to come down, then that's what's going to happen. 
+It is. And it's even harder to manage when you have more than 2.5 billion people using the services, sharing many billions of pieces of content a day, right? 
+So it is hard. And it's not that we're ever going to get every single case of it right. But I still think that we should strive to build a framework, both inside the company and a regulatory framework that encourages and demands that companies do a good job of keeping the amount of harmful content to a bare minimum. 
+So that's a little different. That's driven by, you know, in our physical lives, we have public spaces, like the town square or other public spaces. 
+And we have private spaces, like our living room. And I think, in our digital lives, we need both, too. 
+So for the last 10 or 15 years we've mostly been focused on building what I'd say is the digital equivalent of the town square, right? 
+So that's what Facebook and Instagram, broadly are. It's a place where you can go and interact with a lot of your friends and the people that you're interested in all at once. 
+But we haven't built out, as well, the digital equivalent of the living room, right? It's if you think about the platforms that we've built out around Facebook and Instagram -- there are so many different things that you can do. 
+It's not just about sharing photos. You can find communities for the interests that you have. You can set up a page for your small business to find customers and create jobs and grow. 
+You can run fundraisers for causes you care about. Pretty much anything that you would want to do with a number of people at once, you can do in that digital equivalent of the town square. 
+But when I look at the landscape right now, the digital equivalent of that living room, it's underdeveloped. 
+We have text messaging apps. But those apps, generally, aren't whole platforms for all of the different ways that you'd want to interact privately, right? 
+So it's not -- there's a whole set of things there around making it so that you can share stories or different things and that the data is ephemeral. 
+And it goes away after 24 hours, like with the stories that we have. And I think that that's going to be an important trend, is just data not sticking around forever through lots of different ways, where people want to interact privately and either do transactions or payments or things that are fundamentally private lots of ways. 
+You might want to share your location with your family or friends. But you wouldn't want to share that with everyone at once. 
+So there's a whole kind of rich vein of social tools that need to get built around this digital equivalent of the living room. 
+And that's going to take a new focus for the company. 'Cause we've focused, for the last 10 or 15 years, on primarily more public spaces. 
+You know, most of the research that I've seen actually suggests the opposite, where-- 
+Yeah. Because well, think about it this way. You know, if you watch a TV station, right, and that's your main one, or you read a couple of newspapers, and those are your main ones, those have certain editorial points of view and consistency. 
+Whereas, if you have 200 friends on social media, you're probably going to be friends with people, even if most of your friends are democrats or republicans or one religion or another religion, you're going to have some friends who aren't. 
+And you're going to be surfaced more content from other sides of debates, too. Now, I'm not saying that there aren't issues. 
+I mean, people can go deep on a community. And that can end up having negative consequences. You know, most things don't, right? 
+I mean, I'm a member of communities for people who like playing a certain computer game or like playing guitars, like I do. 
+And you know, that's not, I think, going to take me down some path to be radicalized on anything. But there are harmful communities. 
+And we need to do a good job of steering people away from those, for sure, and making sure that we're not encouraging filter bubbles and harmful things. 
+It's hard to say. I think that that's going to be something that's studied for a long time. I certainly haven't seen data that would suggest that it has. 
+And I think that the hope is that by giving everyone a voice, you're creating a broader diversity of views that people can have out there and that even if sometimes that surfaces some ugly views, I think that the Democratic tradition that we have is that you want to get those issues on the table, so that way, you can deal with them. 
+Certainly, though, this is why I care so much about issues like policing harmful content and hate speech, right? 
+I don't want our work to be something that gets towards amplifying really negative stereotypes or promoting hate. 
+So that's why we're investing so much in building up these AI systems. Now, we have 30,000 people who are doing content and security review to do as best of a job as we can of proactively identifying and removing that kind of harmful content. 
+Yeah, I mean, that was a really terrible event. And we've worked with the police in New Zealand, and we still do. 
+There were a couple of different parts of that where I think we learned. The first was in the live video, itself. 
+I actually think the bigger part of it was -- is the second, which is all of the copies that got uploaded  afterwards. 
+So the live video itself was seen about 200 times while it was live. Most of those, it seems, were from people in a different online community, off Facebook, that this terrorist, basically, told that he was about to go do this. 
+So they went. And a lot of those views were copying the video, so that way they could upload it a lot of times. 
+So one of the big takeaways from that is we need to build our systems to be more advanced, to be able to identify livestream terror events more quickly, as it's happening, which is a terrible thing. 
+You know, it might, in this case. But it would also fundamentally break what livestreaming is for people. 
+Most people are livestreaming, you know, a birthday party or hanging out with friends when they can't be together. 
+And it's one of the things that's magical about livestreaming is that it's bi-directional, right? So you're not just broadcasting. 
+You're communicating. And people are commenting back. So if you had a delay that would break that. 
+But you're not getting comments that are... 
+Well yeah, but afterwards. But going back to the point -- one of the things that we saw was people, basically, of those 200 people who saw this video while it was live, a lot of them copied it and then made different versions of the video that they tried to upload. 
+In the first 24 hours, our systems automatically took down 1.2 million copies of that video that people were trying to upload. 
+Then we took down another 300,000 that people flagged to us that our systems didn't catch proactively. 
+But one of the things that this flagged for me, overall, was the extent to which bad actors are going to try to get around our systems. 
+It wasn't just one copy of the video. There were 800 different versions of that video that people tried to upload. 
+And often, they made slightly different versions of it to try to get around our systems that would catch the videos, as people tried to upload them. 
+So it gets back to some of these issues around policing harmful content, around preventing election interference. 
+These aren't things that you ever fully solve, right? They're ongoing arms races, where we need to make sure that our systems stay ahead of the sophisticated bad actors, who are just always going to try to game them. 
+And that's just part of the dynamic that we're in. And we need to always keep on investing more to stay ahead of that. 
+I'm confident in where we are now. Because there have been a number of major elections since 2016 where the results have been relatively clean on this front. 
+We've learned a lot since 2016, where, obviously, we were behind where we needed to be on defenses for nation states trying to interfere. 
+Now, we verify the identity of anyone trying to run a political ad or administer a large page that gets a lot of distribution. 
+And we have a political ads archive. So anyone who's running an ad, you can search for through all the political ads and see who ran the ads, who they targeted, how much they paid. 
+What are the ads they ran? We have much better collaborations with law enforcement and election commissions and intelligence communities around the world in order to be able to identify where nation states might be trying to interfere. 
+And the systems, overall, have just gotten quite robust. I think, we, at this point, have probably some of the most-advanced systems of any company or government in the world for preventing the kind of tactics that Russia and now other countries, as well, have tried, kind of copying what Russia did in 2016. 
+But the reality is that there's not a single thing that we can do and say, "All right. We put this in place. 
+So now they can't even try to interfere." They're always going to try. So I think that's... 
+Well, what I can guarantee is that they're definitely going to try. That's what we've seen. So our job is to make the defenses stronger and stronger, to make it harder for them to do what they're doing and to build the right partnerships with other folks in the industry and in the intelligence community, so that way, together, we can get a good sense of what is going on out there and help keep this safe. 
+Well, I think it's true that there's no way to stop 100% of crime or bad activity. But you can take out a lot of it, right? 
+And so one of the things that we have gotten quite good at is finding patterns of behavior, right? So if you're Russia, for example, and you're setting up 1,000 fake accounts that are going to operate in some coordinated way as part of an information campaign, then those accounts aren't really behaving the way that normal people on Facebook or WhatsApp or Instagram are behaving. 
+So you could build automated systems that can flag those. Or we can build partnerships with the intelligence community. 
+And often, they'll give us a tip and say, "Hey we think that there might be some bad activity coming from this IP range somewhere. 
+Maybe you should look into this and check it out." And then we can take those down. So across all the different services, even WhatsApp, which is fully encrypted, we can do a pretty good job of taking down these coordinated networks of accounts. 
+And that, certainly, has emerged as one of the most important tactics. Because if you take down the networks of bad accounts before they're actually able to pour out a lot of misinformation or bad content, that's certainly preferable to dealing with it by finding bad content after they've already posted it. 
+Well, more surprised than I should've been. You know, I think, in retrospect, one of the big reflections was that I'm a very idealistic person, right? 
+I built this because I believe that giving everyone a voice is going to be a positive thing. And I still believe that. 
+But I think now I have a little more awareness that when you give everyone a voice, and you help everyone connect with the people they want, if you're serving 2 billion people you're going to see a lot of amazing things that people are capable of. 
+But you're also going to see people try to abuse those systems in every... 
+...in every way, maybe unfortunately. But we certainly have seen people try to abuse the systems in every way that's imaginable. 
+And I think the way that we were handling this before, of dealing with issues reactively as they came up, so waiting for someone in the community to flag it, and then us looking at the piece of content, I just don't think that that suffices for the scale and, frankly, the importance of these services now. 
+We have to be building up systems that can more proactively go and address these issues... 
+...and that's what we're doing. 
+Well, I don't think technology is inherently good or bad. But I think it enables people to do what they want. 
+I think people are more good than bad. But I think that we have a deep responsibility to make sure that we can amplify the good things that people do and to mitigate and remove as much of the negative as possible. 
+And I do believe still, overall, giving people a voice is a positive thing. Helping people connect with the people they want is positive. 
+Giving small businesses the tools that it used to be that only the big guys had, in order to reach customers and grow their businesses, that's going to be good, overall. 
+But we do have a really big responsibility to make sure that we're proactive in addressing these issues. 
+And I think, after working on this and spending most of my time on it for the last few years, I guess what I appreciate more now is not only the amount that we need to go work on them, but that a lot of these questions aren't things that society, I think, should want one company to have to deal with by themselves. 
+I think if we were designing the rules for the internet from scratch today, we would not want a private company to have to make as many of the these fundamental decisions around what expression is good and bad, what is political and not, as we're in the position to do today. 
+Sorry, say that again? 
+No. I didn't expect this. I actually thought when I was getting started with this, that someone would build this one day. 
+I just didn't think it was going to be us. I mean, we were college kids, right? And when you're sitting in a dorm room 15 years ago, I certainly didn't have the resources then to hire 30,000 people to help with content and security review. 
+You know, back then, the AI systems didn't exist to be able to do the work that we need to do to proactively find terrorist content or election interference or any of the things that we now need to. 
+But in the last few years, that's really changed, right? 
+Yeah. So I think that the scale of the systems has created this responsibility for us, where we have to be more proactive about finding and addressing issues. 
+And we can do that both by building technology that is possible now, but wasn't even possible five or 10 years ago, and by hiring people at a scale that would not have been possible for us before. 
+But I'm really committed to doing this well. I think this is going to be an important part of the legacy of what we do. 
+And it's just important for the future of the internet and our country. 
+I think it depends on what they're using them for. So right now, there's a lot of research that shows that when people are using the internet and social networks to really interact and connect with other people, then that's a positive thing, right? 
+And it is associated with all of the positive aspects of well-being that you'd expect, more happiness over time, feeling more connected, less lonely, even, potentially, better health, over time. 
+But when you're using a screen to just consume, and not really have a deep connection with someone, then it's not associated with all those same positive things. 
+So I hope that we build services here that help people connect in that kind of a meaningful way, everything from being able to video chat and have that kind of deep sense of presence, even when I'm not there. 
+When I'm traveling, I can see my kids. And that's great, right? I think that that's really important. 
+But one of the things that I'm very mindful of is to make sure that the services that we're building help to create meaningful interactions between people and not just a place where people can zone out and consume content for a long time. 
+Yes, although I think now, I have probably more of an understanding of some of the issues that we have to deal with and more of an appreciation of what we need to go do to do that. 

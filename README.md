@@ -1,7 +1,7 @@
 <div align="center">
     <h1>Character100 : A Benchmark for Characteristic AI Agents</h1>
     <p>
-      <a href="">Project Page</a> - 
+      <a href="https://character100.github.io/">Project Page</a> - 
       <a href="">Paper</a>
     </p>
 </div>

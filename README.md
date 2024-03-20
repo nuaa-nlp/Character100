@@ -2,7 +2,7 @@
     <h1>Character100 : A Benchmark for Characteristic AI Agents</h1>
     <p>
       <a href="https://character100.github.io/">Project Page</a> - 
-      <a href="">Paper</a>
+      <a href="https://arxiv.org/abs/2403.12368">Paper</a>
     </p>
 </div>
 
@@ -47,3 +47,15 @@ Use `Code/semantic.py` to calculate the BLEU and ROGUE score.
 You can use `Code/discriminator_train.py` to train your discriminator, or you can use our trained [checkpoint](https://drive.google.com/drive/folders/1eQTA1-sp_bgFXWUHuYodvWcXrHQLiQph?usp=sharing).
 
 Use `Code/style.py` to evaluate the style consistency score.
+
+# Citation
+```bibtex
+@misc{wang2024characteristic,
+      title={Characteristic AI Agents via Large Language Models}, 
+      author={Xi Wang and Hongliang Dai and Shen Gao and Piji Li},
+      year={2024},
+      eprint={2403.12368},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+```

@@ -8,7 +8,9 @@
 
 
 
-This is the repository for COLING2024 paper "Characteristic AI Agents via Large Language Models". **Character100** is a comprehensive benchmark designed to evaluate and compare the performance of characteristic AI agents. This benchmark includes a dataset tailored for the task, along with automatic evaluation metrics to measure and compare the capabilities of AI agents.
+This is the repository for COLING2024 paper "Characteristic AI Agents via Large Language Models". 
+
+**Character100** is a comprehensive benchmark designed to evaluate and compare the performance of characteristic AI agents. This benchmark includes a dataset tailored for the task, along with automatic evaluation metrics to measure and compare the capabilities of AI agents.
 
 # Dataset and Resources
 

@@ -1,4 +1,6 @@
-os.environ['TRANSFORMERS_OFFLINE']='1'
+import os
+import argparse
+os.environ["TRANSFORMERS_OFFLINE"]= 'True'
 os.environ["TOKENIZERS_PARALLELISM"] = 'false'
 import warnings
 import json
@@ -17,8 +19,6 @@ from nlgeval.pycocoevalcap.meteor.meteor import Meteor
 from nlgeval.pycocoevalcap.rouge.rouge import Rouge
 import nltk
 from datasets import load_metric
-
-metric_path = METRIC_PATH
 
 def get_dist(file):
     res = {}
@@ -51,8 +51,6 @@ def get_dist(file):
     return ma_dist1, ma_dist2, mi_dist1, mi_dist2, avg_len
 
 def evaluateModel(predict_file, truth_file):
-    ppl = load_metric(metric_path + 'perplexity', model_id='gpt2')
-    bertscore = load_metric(metric_path + 'bertscore')
     f = open(predict_file, 'r')
     g = open(truth_file, 'r')
     preds = []
@@ -70,28 +68,32 @@ def evaluateModel(predict_file, truth_file):
         refs.append(source)
     preds = preds[0:len(preds) - 1]
     refs = refs[0:len(refs) - 1]
-    ppl_score = ppl.compute(input_texts=preds, model_id='gpt2')['mean_perplexity']
-    bert_score = bertscore.compute(predictions=preds, references=refs, lang='en')['precision']
-    bert_score = sum(bert_score) / len(bert_score)
     _, _, d1, d2, _ = get_dist(preds)
 
     metrics_dict = compute_metrics(hypothesis=predict_file, references=[truth_file], no_skipthoughts=True,
                                 no_glove=True)
-    metrics_dict['ppl'] = ppl_score
-    metrics_dict['bertscore'] = bert_score
+    
+    predict_file_name=os.path.splitext(os.path.split(predict_file)[-1])[0]
     metrics_dict['d1'] = d1
     metrics_dict['d2'] = d2
-    metrics_dict['name'] = predict_file.replace(".txt","")
+    metrics_dict['name'] = predict_file_name
     
-    if os.path.exists(f'./eval_results/{predict_file}.replace(".txt","").json'):
-        with open(f'./eval_results/{predict_file}.replace(".txt","").json', 'r', encoding='utf-8') as f:
+    if not os.path.exists('./eval_results'):
+        os.mkdir('./eval_results')
+    if os.path.exists(f'./eval_results/{predict_file_name}.json'):
+        with open(f'./eval_results/{predict_file_name}.json', 'r', encoding='utf-8') as f:
             data = json.load(f)
     else:
         data = []
     data.append(metrics_dict)
     print(metrics_dict)
-    with open(f'./eval_results/{predict_file.replace(".txt","")}.json', 'w', encoding='utf-8') as f:
+    with open(f'./eval_results/{predict_file_name}.json', 'w', encoding='utf-8') as f:
         json.dump(data, f)
 
 if __name__ == '__main__':
-    evaluateModel(PREDICT_FILE, TRUTH_FILE)
+    parser=argparse.ArgumentParser()
+    parser.add_argument('-p','--predict_file',required=True)
+    parser.add_argument('-t','--truth_file',required=True)
+    args=parser.parse_args()
+
+    evaluateModel(args.predict_file, args.truth_file)

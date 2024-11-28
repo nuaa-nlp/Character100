@@ -1,0 +1,5 @@
+Discriminator_checkpoint/
+results/
+eval_results/
+discriminator_results/
+__pycache__

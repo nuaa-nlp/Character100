@@ -38,6 +38,10 @@ The origin style corpus for the 106 people is in `Data/interviews_origin`, and t
 
 # Evaluation Metrics
 
+## Evaluate your model
+
+The testset support zero-shot and few-shot settings. The example usage of the dataset is in `Code/dataset_example.py`
+
 ## Background Knowledge Consistency
 
 ### BLEU and ROGUE

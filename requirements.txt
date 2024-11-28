@@ -1,0 +1,11 @@
+datasets==2.12.0
+lxml==5.3.0
+nltk==3.9.1
+peft==0.6.0
+Requests==2.32.3
+sentence_transformers==2.2.2
+torch==1.13.0+cu117
+tqdm==4.67.1
+transformers==4.30.2
+trl==0.7.1
+nlg-eval==2.4.1

@@ -6,25 +6,34 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 import argparse
 import re
 
-from chacater_100_dataset import DiscriminatorDataset
+from chacater_100_dataset import DiscriminatorEvalDataset
 from torch.utils.data import DataLoader
 from peft import PeftModel
 from tqdm import tqdm
 
 class StyleDiscriminator():
-    def __init__(self, mode, llama2_7b_chat_path,discriminator_ckpt_path,data_path,maxnewtoken,temperature,topp,batchsize):
+    def __init__(self, mode, llama2_7b_chat_path,discriminator_ckpt_path,eval_data_path,testset_path,maxnewtoken,temperature,topp,batchsize):
+        with open(testset_path, 'r') as f:
+            data = f.readlines()
+        self.names = []
+        for line in data:
+            name = line.strip().split('\t')[0]
+            name = name.replace('_',' ')
+            self.names.append(name)
         self.maxnewtoken=maxnewtoken
         self.temperature=temperature
         self.topp=topp
         self.batchsize=batchsize
-        if mode=='predict':
+        self.mode=mode
+        self.eval_data_path=eval_data_path
+        if self.mode=='predict':
             self.tokenizer = AutoTokenizer.from_pretrained(llama2_7b_chat_path, use_fast=False, trust_remote_code=True)
             self.tokenizer.pad_token = "[PAD]"
             self.tokenizer.padding_side = "left"
             self.model = AutoModelForCausalLM.from_pretrained(llama2_7b_chat_path, device_map="auto", trust_remote_code=True, load_in_8bit=True, torch_dtype=torch.float16)
 
             self.model = PeftModel.from_pretrained(self.model, discriminator_ckpt_path, torch_dtype=torch.float16)
-        self.get_dataloader(data_path)
+        self.get_dataloader(eval_data_path)
 
 
     def generate_prompt(self,speech):
@@ -54,48 +63,41 @@ class StyleDiscriminator():
         
         return string
 
-    def get_data(self,filePath):
-        with open(filePath, 'r') as f:
+    def get_dataloader(self, eval_data_path):
+        with open(eval_data_path, 'r') as f:
             data = f.readlines()
-        names = []
-        contexts = []
-        questions = []
-        answers = []
-        for line in data:
-            name, context, question, answer = line.strip().split('\t')
-            name = name.replace('_',' ')
-            names.append(name)
-            contexts.append(context)
-            questions.append(question)
-            answers.append(answer)
-        return names, contexts, questions, answers
-
-    def get_dataloader(self, filePath):
-        names, contexts, questions, answers = self.get_data(filePath)
-        testset = DiscriminatorDataset(names, contexts, questions, answers, self.maxnewtoken)
-        self.testloader = DataLoader(testset, batch_size=self.batchsize, shuffle=False)
+        predicts = [item.strip() for item in data]
+        
+        evalset = DiscriminatorEvalDataset(predicts)
+        self.evalloader = DataLoader(evalset, batch_size=self.batchsize, shuffle=False)
     
     def predict(self, fp):
-        for batch in tqdm(self.testloader):
-            prompts, truth = batch
-            prompts = [self.generate_prompt(i) for i in prompts]
-            inputs = self.tokenizer(prompts, return_tensors="pt", padding=True, add_special_tokens=True).to('cuda')
-            # print('generating..')
-            predicts = self.model.generate(**inputs, max_new_tokens=self.maxnewtoken,do_sample=True,repetition_penalty=1.1, top_p = self.topp, temperature = self.temperature,  num_return_sequences = 5)
-            predicts = predicts.reshape((5,-1))
-            pre_list = []
-            for i in range(predicts.shape[0]):
-                pre_list.append(self.tokenizer.decode(predicts[i], skip_special_tokens=True, clean_up_tokenization_spaces=True))
-            
-            pre_list = [self.processPrompt(i) for i in pre_list]
-            predicts = [pre.replace('<','').replace('>','') for pre in pre_list]
-            for pre, name in zip(predicts, truth):
-                fp.write(','.join(predicts)+'\t'+name+'\n')
+        predicts_all = []
+        with torch.no_grad():
+            for batch in tqdm(self.evalloader):
+                predicts = batch
+                prompts = [self.generate_prompt(i) for i in predicts]
+                inputs = self.tokenizer(prompts, return_tensors="pt", padding=True, add_special_tokens=True).to('cuda')
+                predicts = self.model.generate(**inputs, max_new_tokens=20,do_sample=True,repetition_penalty=1.1, top_p = 0.9, temperature = 0.9,  num_return_sequences = 5)
+                pre_list =[]
+
+                for i in range(predicts.shape[0]):
+                    now_predict = self.tokenizer.decode(predicts[i], skip_special_tokens=True, clean_up_tokenization_spaces=True)
+                    pre_list.append(now_predict)
+                
+                
+                pre_list = [self.processPrompt(i).replace('<','').replace('>','') for i in pre_list]
+                pre_list = [pre_list[i:i+5] for i in range(0, len(pre_list), 5)]
+                predicts_all+=pre_list
+        print(predicts_all)
+        for item in predicts_all:
+            fp.write(','.join(item)+'\n')
+        return predicts_all
     
     def load_predict(self, filepath):
         with open(filepath) as f:
             data=f.readlines()
-        return [item.strip().split('\t')[0].split(',') for item in data], [item.strip().split('\t')[1] for item in data]
+        return [item.strip().split(',') for item in data]
 
     def eval(self, predicts, truths):
         at = [[] for _ in range(5)]
@@ -118,33 +120,36 @@ class StyleDiscriminator():
 
         return [float(hitAt1)/float(len(predicts)), float(hitAt3)/float(len(predicts)), float(hitAt5)/float(len(predicts))]
     
-    def discriminate(self, predict_file):
-        predicts, truths=self.load_predict(predict_file)
-        results = self.eval(predicts, truths)
-        return [str(i) for i in results]
+    def discriminate(self):
+        if not os.path.exists('./discriminator_results'):
+            os.mkdir('./discriminator_results')
+        output_filename=os.path.split(self.eval_data_path)[-1]
+        predict_file=os.path.join('./discriminator_results',output_filename)
+        if self.mode=='predict':
+            with open(predict_file, 'w') as f1:
+                with torch.no_grad():
+                    self.predict(f1)
+            predicts=self.load_predict(predict_file)
+            results = self.eval(predicts, self.names)
+            return results
+        elif self.mode=='eval':
+            predicts=self.load_predict(predict_file)
+            results = self.eval(predicts, self.names)
+            return results
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('-p1','--llama2_7b_chat_path')
-    parser.add_argument('-p2','--discriminator_ckpt_path')
-    parser.add_argument('-p3','--data_path',type=str,default='Data/test.txt')
+    parser.add_argument('-p2','--discriminator_ckpt_path',default='Discriminator_checkpoint/')
+    parser.add_argument('-p3','--testset_path',type=str,default='Data/test.txt')
     parser.add_argument('-m','--mode',choices=['predict','eval'],required=True)
-    parser.add_argument('-p4','--predict_file',type=str)
+    parser.add_argument('-p4','--eval_data_path',type=str)
     parser.add_argument('--maxnewtoken', type=int, default=100)
     parser.add_argument('--temperature', type=float, default=0.9)
     parser.add_argument('--topp', type=float, default=0.9)
-    parser.add_argument('--batchsize', type=int, default=32)
+    parser.add_argument('--batchsize', type=int, default=4)
     args = parser.parse_args()
 
-    discriminator=StyleDiscriminator(args.mode,args.llama2_7b_chat_path,args.discriminator_ckpt_path,args.data_path,args.maxnewtoken,args.temperature,args.topp,args.batchsize)
-    if not os.path.exists('./discriminator_results'):
-        os.mkdir('./discriminator_results')
-    if args.mode=='predict':
-        output_filename=f'./discriminator_results/result_{args.temperature}_{args.topp}.txt'
-        with open(output_filename, 'w') as f1:
-            with torch.no_grad():
-                discriminator.predict(f1)
-        results=discriminator.discriminate(output_filename)
-    elif args.mode=='eval':
-        results=discriminator.discriminate(args.predict_file)
+    discriminator=StyleDiscriminator(args.mode,args.llama2_7b_chat_path,args.discriminator_ckpt_path,args.eval_data_path,args.testset_path,args.maxnewtoken,args.temperature,args.topp,args.batchsize)
+    results=discriminator.discriminate()
     print(results)

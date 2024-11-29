@@ -89,6 +89,7 @@ def evaluateModel(predict_file, truth_file):
     print(metrics_dict)
     with open(f'./eval_results/{predict_file_name}.json', 'w', encoding='utf-8') as f:
         json.dump(data, f)
+    return metrics_dict
 
 if __name__ == '__main__':
     parser=argparse.ArgumentParser()

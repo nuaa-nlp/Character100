@@ -40,7 +40,7 @@ The origin style corpus for the 106 people is in `Data/interviews_origin`, and t
 
 ## Evaluate your model
 
-The testset support zero-shot and few-shot settings. The example usage of the dataset is in `Code/dataset_example.py`
+The testset support zero-shot and few-shot settings. The example usage of the dataset is in `Code/dataset_example.py` The predicted results file and ground truth file is recommended for using the evaluation scripts below. Each line in the file stands for a predicted response/ground truth response. The desired output for `model_name` in `type` (like zero-shot) settings should be stored in `results/[model_name]/predict_[type].txt` and `results/[model_name]/truth_[type].txt`.
 
 ## Background Knowledge Consistency
 
@@ -77,14 +77,23 @@ Use `Code/style.py` to evaluate the style consistency score.
 For predict:
 
 ```python
-python Code/style.py -p1 [llama2_7b_chat_path] -p2 [discriminator_ckpt_path] -m predict
+python Code/style.py -p1 [llama2_7b_chat_path] -p2 [discriminator_ckpt_path] -m predict -p4 [eval_data_path]
 ```
 
 For eval:
 
 ```python
-python Code/style.py -p4 [predict_file] -m predict
+python Code/style.py -p4 [eval_data_path] -m predict 
 ```
+
+## Overall Score
+Use `Code/eval_results.py` to calculate the overall score.
+
+**Usage**
+```python
+python Code/eval_results.py -m [model_name] -t [type] -p1 [llama2_7b_chat_path]
+```
+
 
 # Citation
 ```bibtex

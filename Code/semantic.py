@@ -4,7 +4,7 @@ import torch
 from sentence_transformers import SentenceTransformer, util
 from tqdm import tqdm
 
-class senmanticSimilarity():
+class semanticSimilarity():
     def __init__(self, model_path) -> None:
         self.model = SentenceTransformer(model_path)
     
@@ -35,6 +35,6 @@ if __name__ == '__main__':
     parser.add_argument('-m','--model_path',required=True)
     args=parser.parse_args()
     
-    simCalculator = senmanticSimilarity(args.model_path)
+    simCalculator = semanticSimilarity(args.model_path)
     sim = simCalculator.process(args.predict_file, args.truth_file)
     print(sim)
